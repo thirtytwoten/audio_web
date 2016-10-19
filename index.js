@@ -3,18 +3,19 @@ piano();
 function piano() {
   tones.attack = 0;
   tones.release = 300;
-   tones.type = "sawtooth";
+  tones.type = "sawtooth";
+  
   // white
-  var notes = [432, "c", "d", "e", "f", "g", "a", "b"];
+  var notes = ["c", "d", "e", "f", "g", "a", "b"];
   for(var i = 0; i < 7; i++) {
-    makeKey(100 + i * 100, 100, 100, 500, "white", notes[0]);
+    makeKey(100 + i * 100, 100, 100, 500, "white", notes[i]);
   }
-  // black
-  // makeKey(170, 100, 60, 275, "black", "c#");
-  // makeKey(270, 100, 60, 275, "black", "d#");
-  // makeKey(470, 100, 60, 275, "black", "f#");
-  // makeKey(570, 100, 60, 275, "black", "g#");
-  // makeKey(670, 100, 60, 275, "black", "a#");
+  //black
+  makeKey(170, 100, 60, 275, "black", "c#");
+  makeKey(270, 100, 60, 275, "black", "d#");
+  makeKey(470, 100, 60, 275, "black", "f#");
+  makeKey(570, 100, 60, 275, "black", "g#");
+  makeKey(670, 100, 60, 275, "black", "a#");
 
   function makeKey(x, y, width, height, color, note) {
     var key = document.createElement("div");
